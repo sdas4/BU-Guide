@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+courses = [{:abbrev => 'CS 545', :name => 'Software Engineering', :crn => '######'},
+            {:abbrev => 'CS 550', :name => 'Operating Systems', :crn => '######'},
+            {:abbrev => 'CS 555', :name => 'Visual Processing', :crn => '######'},
+  	 ]
+  	 
+  	 
+courses.each do |course|
+    Course.create!(course)
+end
+

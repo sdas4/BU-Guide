@@ -18,7 +18,19 @@ module NavigationHelpers
 
     when /^the dashboard$/
       '/guide/dashboard'
+      
+    when /^the courses$/
+      '/courses'
+      
+    when /^the professors$/
+      '/professors'
 
+    when /^the specific course$/
+      '/courses/new'
+      
+      
+    when /^the new professor$/
+      '/professors/new'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

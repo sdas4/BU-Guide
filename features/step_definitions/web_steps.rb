@@ -53,6 +53,10 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
 
+When /^(?:|I )click "([^"]*)"$/ do |link|
+  click_link(link)
+end
+
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
@@ -109,6 +113,7 @@ Then /^(?:|I )should see "([^"]*)"$/ do |text|
     assert page.has_content?(text)
   end
 end
+
 
 Then /^(?:|I )should see the feature "([^"]*)"$/ do |text|
   if page.respond_to? :should

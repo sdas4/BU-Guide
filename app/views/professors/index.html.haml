@@ -1,0 +1,17 @@
+%h1 All Professors
+
+%table#professors
+  %thead
+    %tr
+      %th Name
+      %th Office
+  %tbody
+    - @professors.each do |professor|
+      %tr
+        %td= link_to(professor.name, {:action => 'show', :id => professor.id}, :class => 'action show')
+        %td= professor.office
+
+
+
+= link_to '<button type="button">Add New Professor</button>'.html_safe, new_professor_path
+= link_to '<button type="button">Back to Dashboard</button>'.html_safe, guide_dashboard_path

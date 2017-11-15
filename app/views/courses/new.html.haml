@@ -1,0 +1,14 @@
+%h1 Enter New Course
+
+= form_tag courses_path do
+
+  = label :course, :abbrev, 'abbrev'
+  = text_field :course, 'abbrev'
+
+  = label :course, :name, 'name'
+  = text_field :course, 'name'
+
+  = label :course, :crn, 'crn'
+  = text_field :course, 'crn'
+
+  = submit_tag 'Save Changes'

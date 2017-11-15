@@ -1,0 +1,13 @@
+%h2 Details about #{@professor.name}
+
+%ul#details
+  %li
+    Name:
+    = @professor.name
+  %li
+    Office:
+    = @professor.office
+
+= link_to '<button type="button">Edit</button>'.html_safe, edit_professor_path(@professor)
+= button_to 'Delete', professor_path(@professor), :method => :delete, :confirm => 'Are you sure?'
+= link_to '<button type="button"><< Back</button>'.html_safe, professors_path

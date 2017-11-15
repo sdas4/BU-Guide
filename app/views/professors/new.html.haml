@@ -1,0 +1,11 @@
+%h1 Enter New Professor
+
+= form_tag professors_path do
+
+  = label :professor, :name, 'name'
+  = text_field :professor, 'name'
+
+  = label :professor, :office, 'office'
+  = text_field :professor, 'office'
+
+  = submit_tag 'Save Changes'

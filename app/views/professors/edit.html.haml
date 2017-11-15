@@ -1,0 +1,11 @@
+%h1 Edit Existing Professor
+
+= form_tag professor_path(@professor), :method => :put do
+
+  = label :professor, :name, 'name'
+  = text_field :professor, 'name'
+
+  = label :professor, :office, 'office'
+  = text_field :professor, 'office'
+
+  = submit_tag 'Update Professor Info'

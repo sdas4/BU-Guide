@@ -1,0 +1,20 @@
+%h1 All Courses
+
+%table#courses
+  %thead
+    %tr
+      %th Course Abbrev
+      %th Course Name
+      %th CRN
+  %tbody
+    - @courses.each do |course|
+      %tr
+        %td= link_to(course.abbrev, {:action => 'show', :id => course.id}, :class => 'action show')
+        %td= course.name
+        %td= course.crn
+        
+
+
+
+= link_to '<button type="button">Add New Course</button>'.html_safe, new_course_path
+= link_to '<button type="button">Back to Dashboard</button>'.html_safe, guide_dashboard_path

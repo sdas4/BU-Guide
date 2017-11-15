@@ -367,6 +367,7 @@ DEPENDENCIES
   haml
   jbuilder (~> 2.0)
   jquery-rails
+  launchy
   metric_fu
   rails (= 4.2.5)
   rspec-rails
