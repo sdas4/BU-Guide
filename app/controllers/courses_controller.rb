@@ -46,8 +46,4 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
   
-  #def prof
-  #  @course = Course.find params[:teacher]
-  #end
-    
 end
