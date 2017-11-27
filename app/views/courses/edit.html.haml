@@ -2,13 +2,21 @@
 
 = form_tag course_path(@course), :method => :put do
 
-  = label :course, :abbrev, 'abbrev'
+  = label :course, :abbrev, 'Course Abbreviation'
   = text_field :course, 'abbrev'
 
-  = label :course, :name, 'name'
+  = label :course, :name, 'Course Name'
   = text_field :course, 'name'
 
-  = label :course, :crn, 'crn'
+  = label :course, :crn, 'CRN'
   = text_field :course, 'crn'
+  
+  = label :course, :teacher, 'Handling Professor'
+  = text_field :course, 'teacher'
 
   = submit_tag 'Update Course Info'
+  //  - if(!Course.where(:abbrev => @course.abbrev).empty?)
+  //    = Course Abbreviation already used
+  //  - else
+
+  = link_to '<button type="button">Cancel</button>'.html_safe, courses_path

@@ -5,11 +5,13 @@
     %tr
       %th Name
       %th Office
+      %th Class
   %tbody
     - @professors.each do |professor|
       %tr
         %td= link_to(professor.name, {:action => 'show', :id => professor.id}, :class => 'action show')
         %td= professor.office
+        %td= professor.classes
 
 
 

@@ -59,3 +59,12 @@ form label {
   font-weight: bold;
   color: maroon;
 }
+.heading {
+  font-size: 126%;
+}
+.page_heading {
+  font-size: 135%;
+}
+.red {
+  color: rgb(255, 65, 65);
+}

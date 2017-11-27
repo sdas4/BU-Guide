@@ -6,12 +6,14 @@
       %th Course Abbrev
       %th Course Name
       %th CRN
+      %th Professor
   %tbody
     - @courses.each do |course|
       %tr
         %td= link_to(course.abbrev, {:action => 'show', :id => course.id}, :class => 'action show')
         %td= course.name
         %td= course.crn
+        %td= course.teacher
         
 
 

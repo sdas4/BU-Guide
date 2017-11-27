@@ -69,13 +69,33 @@ describe CoursesController, type: :controller do
           
   #       expect(Course).to receive(:create!).with(@course1).and_return(@course1)
 
+ describe "#create" do
+    before :each do
+      @id1 = "1"
+      @course1 = "545"
+      @course2 = "575"
+      @results = [@course1,@course2]
+
+    end
+    context "When a course is created" do
+      describe "When trying to create a course with the same name" do
+        it "flashes a warning saying that a course with that name already exists" do
+          # expect(Course).to receive(:find).with(@id1).and_return(@course1)
+          # get :show, :id => @id1 
           
+          #expect(flash[:warning]).to eq("#{course.abbrev} already exists! Please try a new one.")
+        end
+      end
+      describe "When trying to create a course without filling all the fields" do
+        it "flashes a warning saying that was an invalid course" do
+          # expect(Course).to receive(:find).with(@id1).and_return(@course1)
+          # get :show, :id => @id1 
           
-  #         #get :create, :id => @id1 
-  #       end
-  #     end
-  #   end
-  # end
+          #expect(flash[:warning]).to eq("Invalid Course Entry.")
+        end
+      end
+    end
+  end
   
   describe "#edit" do
     before :each do

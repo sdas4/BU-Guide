@@ -7,6 +7,12 @@
   %li
     Office:
     = @professor.office
+  %li
+    Courses Taught:
+    - if(!Course.where(:teacher => @professor.name).empty?)
+      = link_to(@professor.classes, {:action => 'show', :id => Course.where(:teacher => @professor.name).ids , :controller=>"courses"}, :class => 'action show')
+    - else
+      = @professor.classes
 
 = link_to '<button type="button">Edit</button>'.html_safe, edit_professor_path(@professor)
 = button_to 'Delete', professor_path(@professor), :method => :delete, :confirm => 'Are you sure?'

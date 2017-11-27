@@ -2,13 +2,17 @@
 
 = form_tag courses_path do
 
-  = label :course, :abbrev, 'abbrev'
+  = label :course, :abbrev, 'Course Abbreviation'
   = text_field :course, 'abbrev'
 
-  = label :course, :name, 'name'
+  = label :course, :name, 'Course Name'
   = text_field :course, 'name'
 
-  = label :course, :crn, 'crn'
+  = label :course, :crn, 'CRN'
   = text_field :course, 'crn'
+  
+  = label :course, :teacher, 'Handling Professor'
+  = text_field :course, 'teacher'
 
   = submit_tag 'Save Changes'
+  = link_to '<button type="button">Back to Courses</button>'.html_safe, courses_path

@@ -7,7 +7,13 @@
   %li
     Course CRN:
     = @course.crn
+  %li
+    Handling Professor:
+    - if(!Professor.where(:name => @course.teacher).empty?)
+      = link_to(@course.teacher, {:action => 'show', :id => (Professor.where(:name => @course.teacher).ids) , :controller=>"professors"}, :class => 'action show') 
+    - else
+      = @course.teacher
 
 = link_to '<button type="button">Edit</button>'.html_safe, edit_course_path(@course)
 = button_to 'Delete', course_path(@course), :method => :delete, :confirm => 'Are you sure?'
-= link_to '<button type="button"><< Back</button>'.html_safe, courses_path
+= link_to '<button type="button"><< Back</button>'.html_safe, courses_path 

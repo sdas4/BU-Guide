@@ -9,3 +9,9 @@ Given I am on the homepage
 When I press "Sign in as Guest"
 When I go to the dashboard
 Then I should see "Dashboard"
+
+Scenario: User registeration
+Given I am on the homepage
+When I press "Sign Up"
+When I go to the registeration
+Then I should see "User Registration"

@@ -1,0 +1,28 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %link{:href => "/default.css", :rel => "stylesheet", :type => "text/css"}/
+    %title Binghamton University Guide
+  %body
+    .container
+      #header.span-24
+        %h2.page_heading
+          User Registration
+        %p.heading
+          Fill in all the details below
+      .span-24
+        = yield
+      #footer.span-24
+= form_tag users_path do
+
+  = label :user, :emailID, 'E-Mail ID'
+  = text_field :user, 'emailID'
+
+  = label :user, :username, 'Username'
+  = text_field :user, 'username'
+
+  = label :user, :password, 'Password'
+  = text_field :user, 'password'
+
+  = submit_tag 'Register'

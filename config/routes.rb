@@ -1,9 +1,18 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
+  #get 'sessions/new'
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
+
   get 'guide/index'
   get 'guide/dashboard'
+  get 'guide/register'
 
   resources :courses
   resources :professors
+  resources :users
 
   root 'guide#index'
   # The priority is based upon order of creation: first created -> highest priority.

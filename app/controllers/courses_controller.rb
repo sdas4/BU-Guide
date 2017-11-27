@@ -2,7 +2,7 @@ class CoursesController < ApplicationController
     
   def show
     @course = Course.find params[:id]
-    #redirect_to course_path
+    #redirect_to courses_path
   end
    
   def index
@@ -14,8 +14,17 @@ class CoursesController < ApplicationController
   end
     
   def create
-    @course = Course.create!(params.require(:course).permit(:abbrev, :name, :crn))
-    flash[:notice] = "#{@course.abbrev} was successfully created."
+    vals = params[:course]
+    if(Course.exists?(:abbrev => vals[:abbrev]))
+       flash[:warning] = "#{vals[:abbrev]} already exists! Please try a new one."
+    else
+        @course = Course.create(params.require(:course).permit(:abbrev, :name, :crn, :teacher))
+        if !@course.valid?
+            flash[:warning] = "Invalid Course Entry."
+        end
+    end
+    # @course = Course.create!(params.require(:course).permit(:abbrev, :name, :crn, :teacher))
+    # flash[:notice] = "#{@course.abbrev} was successfully created."
     redirect_to courses_path
   end
     
@@ -25,7 +34,7 @@ class CoursesController < ApplicationController
     
   def update
     @course = Course.find params[:id]
-    @course.update_attributes!(params.require(:course).permit(:abbrev, :name, :crn))
+    @course.update_attributes!(params.require(:course).permit(:abbrev, :name, :crn, :teacher))
     flash[:notice] = "#{@course.abbrev} was successfully updated."
     redirect_to course_path(@course)
   end
@@ -36,5 +45,9 @@ class CoursesController < ApplicationController
     flash[:notice] = "Course '#{@course.abbrev}' deleted."
     redirect_to courses_path
   end
+  
+  #def prof
+  #  @course = Course.find params[:teacher]
+  #end
     
 end

@@ -19,6 +19,9 @@ module NavigationHelpers
     when /^the dashboard$/
       '/guide/dashboard'
       
+    when /^the registration$/
+      '/guide/register'
+      
     when /^the courses$/
       '/courses'
       

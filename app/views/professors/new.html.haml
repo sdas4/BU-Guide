@@ -2,10 +2,14 @@
 
 = form_tag professors_path do
 
-  = label :professor, :name, 'name'
+  = label :professor, :name, 'Professor Name'
   = text_field :professor, 'name'
 
-  = label :professor, :office, 'office'
+  = label :professor, :office, 'Office Location'
   = text_field :professor, 'office'
 
+  = label :professor, :classes, 'Courses Taught'
+  = text_field :professor, 'classes'
+  
   = submit_tag 'Save Changes'
+  = link_to '<button type="button">Back to Professors</button>'.html_safe, professors_path

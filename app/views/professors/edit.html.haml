@@ -2,10 +2,14 @@
 
 = form_tag professor_path(@professor), :method => :put do
 
-  = label :professor, :name, 'name'
+  = label :professor, :name, 'Professor Name'
   = text_field :professor, 'name'
 
-  = label :professor, :office, 'office'
+  = label :professor, :office, 'Office Location'
   = text_field :professor, 'office'
+  
+  = label :professor, :classes, 'Courses Taught'
+  = text_field :professor, 'classes'
 
   = submit_tag 'Update Professor Info'
+  = link_to '<button type="button">Cancel</button>'.html_safe, professors_path
