@@ -42,9 +42,9 @@ h1 {
 h1.title {
   margin: 0 0 1em;
   padding: 20px;
-  background-color: green;
+  background-color: #1c9736;
   color: white;
-  border-bottom: 4px green;
+  border-bottom: 4px #1c9736;
   font-size: 2em;
   font-style: normal;
 }
@@ -67,4 +67,117 @@ form label {
 }
 .red {
   color: rgb(255, 65, 65);
+}
+
+body {
+    background-size: 200% 100% !important;
+    animation: move 10s ease infinite;
+    transform: translate3d(0, 0, 0);
+    background: #e9f6f4;
+    height: 100vh;
+}
+
+.form {
+    margin-top: 40px;
+    border-radius: 6px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translate3d(0, 500px, 0);
+    animation: arrive 500ms ease-in-out 0.9s forwards;
+}
+
+
+.btn {
+    display: block;
+    width: 10%;
+    padding: 10px;
+    -webkit-appearance: push-button;
+    outline: 0;
+    border: 5;
+    color: black;
+    transition: 0.3s;
+}
+
+
+.smallbtn {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    -webkit-appearance: push-button;
+    outline: 0;
+    text-align: center;
+    border: 5;
+    color: black;
+    transition: 0.3s;
+}
+
+.glass{
+	/* background styles */
+	position: relative;
+	display: inline-block; 
+	width: 40%;
+  padding: 15px;
+	background-color: white; /*for compatibility with older browsers*/
+	background-image: linear-gradient(white,lightgrey);
+	/* text styles */
+	text-decoration: none;
+	color: black;
+	font-size: 15px;
+	font-family: sans-serif;
+	font-weight: 70;
+	border-radius: 2px;
+  box-shadow: 0px 1px 4px -2px #333;
+  text-shadow: 0px -1px #333;
+}
+.glass:after{
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: calc(100% - 4px);
+	height: 50%;
+	background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.2));
+}
+.btn:hover{
+	background: #83c996;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  background: White;
+  color: DarkSlateGrey;
+  font-family: Tahoma, Verdana, sans-serif;
+  font-size: 10pt;
+}
+div#main {
+  margin: 0;
+  padding: 0 20px 20px;
+}
+a {
+  background: transparent;
+  color: maroon;
+  text-decoration: underline;
+  font-weight: bold;
+}
+h1 {
+  color: maroon;
+  font-size: 150%;
+  font-style: italic;
+  display: block;
+  width: 100%;
+  border-bottom: 1px solid DarkSlateGrey;
+}
+h1.title {
+  margin: 0 0 1em;
+  padding: 20px;
+  background-color: #1c9736;
+  color: white;
+  border-bottom: 4px #1c9736;
+  font-size: 2em;
+  font-style: normal;
+}
+#notice #warning {
+  background: rosybrown;
+  margin: 1em 0;
+  padding: 4px;
 }

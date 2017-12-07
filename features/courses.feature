@@ -3,14 +3,18 @@ As a user
 I want to see the various courses listed
 So that I can decide the courses to choose from
 
-Background: courses in database
+Background: courses in database, professors in database
  
   Given the following courses exist:
   | abbrev       | name                 | crn    | teacher         |
-  | CS 545        | Software Engineering | ###### | Rose M Williams |
-  | CS 550        | Operating Systems    | ###### | Prof X          |
-  | CS 555        | Visual Processing    | ###### | Prof Y          |
-  | CS 560        | computer graphics    | ###### | Prof Z          |
+  | CS 545        | Software Engineering | 000001 | Rose M Williams |
+  | CS 550        | Operating Systems    | 000002 | Prof X          |
+  | CS 555        | Visual Processing    | 000003 | Prof Y          |
+  | CS 560        | computer graphics    | 000004 | Prof Z          |
+
+  Given the following professors exist:
+  | name | office | classes |
+  | Rose M Williams | EB-Q06 | CS 545 |
 
 Scenario: User adds a course
 Given I am on the courses
@@ -61,7 +65,7 @@ Then I go to the specific course
 Then I should see "Enter New Course"
 And I fill in "Course Abbreviation" with "CS 545"
 Then I press "Save Changes"
-Then I should see "CS 545 already exists!"
+Then I should see "Abbrev already exists"
 
 Scenario: User enters a empty course record
 Given I am on the courses
@@ -70,11 +74,11 @@ Then I go to the specific course
 Then I should see "Enter New Course"
 And I fill in "Course Abbreviation" with ""
 Then I press "Save Changes"
-Then I should see "Invalid Course Entry."
+Then I should see "Abbrev can't be blank"
 
-# Scenario: User follows link from course page to professor page
-# Given I am on the courses
-# And I click "CS 545"
-# Then I should see "Details about CS 545"
-# Then I click "Rose M Williams"
-# Then I should see "Details about Rose M Williams"
+Scenario: User goes to Professor from Course
+Given I am on the courses
+When I click "CS 545"
+Then I should see "Details about CS 545"
+Then I follow "Rose M Williams"
+Then I should see "Details about Rose M Williams" 

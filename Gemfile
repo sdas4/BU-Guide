@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 
+ruby '2.3.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use sqlite3 as the database for Active Record
@@ -36,10 +37,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :test do
   gem 'metric_fu'
   gem 'database_cleaner'
-  gem 'rspec-rails', :require => false
+  gem 'rspec-rails', '3.7.2'
   gem 'guard-rspec'
   gem 'simplecov', :require => false
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
 end
 

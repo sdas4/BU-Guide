@@ -112,43 +112,49 @@ describe ProfessorsController, type: :controller do
   
   
   
-    describe "updates a professor" do
-      let(:id) {'1'}
-      let (:params) {{:name => "CS545"}}
-      let (:professor) {double('Software Engineering',params)}
+  # describe "updates a professor" do
+  #   before :each do
+  #     @id1 = "1"
+  #     @professor1 = "545"
+  #     @professor2 = "575"
+  #     @results = [@professor1,@professor2]
+  #   end
+  #   let(:id) {'1'}
+  #   let (:params) {{:name => "CS545"}}
+  #   let (:professor) {double('Software Engineering',params)}
        
-      it "calls the find method to retrieve a professor" do
+  #   it "calls the find method to retrieve a professor" do
+  #     expect(Professor).to receive(:find).with(id).and_return(professor)
+  #     allow(professor).to receive(:update_attributes).with(params)
+  #     patch :update, id: id, professor: params
+  #   end
+  # end
+    
+    
+  describe 'destroys a professor' do
+    let(:id) {'1'}
+    let(:professor) {double('Software Engineering', :name => 'CS545')}
+      
+    it 'calls the find method to retreive the professor' do
         expect(Professor).to receive(:find).with(id).and_return(professor)
-        allow(professor).to receive(:update_attributes!).with(params)
-        get :update, id: id, professor: params
-      end
+        allow(professor).to receive(:destroy)
+        get :destroy, id: id
     end
-    
-    
-     describe 'destroys a professor' do
-        let(:id) {'1'}
-        let(:professor) {double('Software Engineering', :name => 'CS545')}
-        
-        it 'calls the find method to retreive the professor' do
-            expect(Professor).to receive(:find).with(id).and_return(professor)
-            allow(professor).to receive(:destroy)
-            get :destroy, id: id
-        end
-        
-        it 'sets a flash message' do
-           allow(Professor).to receive(:find).with(id).and_return(professor)
-           allow(professor).to receive(:destroy)
-           get :destroy,  id: id
-           expect(flash[:notice]).to eq("Professor '#{professor.name}' deleted.")
-        end
-        
-        it 'redirects to the professors page' do
-           allow(Professor).to receive(:find).with(id).and_return(professor)
-           allow(professor).to receive(:destroy)
-           get :destroy,  id: id
-           expect(response).to redirect_to(professors_path)
-       end
+      
+    it 'sets a flash message' do
+       allow(Professor).to receive(:find).with(id).and_return(professor)
+       allow(professor).to receive(:destroy)
+       get :destroy,  id: id
+       expect(flash[:notice]).to eq("Professor '#{professor.name}' deleted.")
     end
+      
+    it 'redirects to the professors page' do
+       allow(Professor).to receive(:find).with(id).and_return(professor)
+       allow(professor).to receive(:destroy)
+       get :destroy,  id: id
+       expect(response).to redirect_to(professors_path)
+   end
+  end
   # describe "#update" do
   #   before :each do
   #     @id1 = "1"

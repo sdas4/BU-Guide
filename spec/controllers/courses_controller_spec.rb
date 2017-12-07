@@ -69,7 +69,7 @@ describe CoursesController, type: :controller do
           
   #       expect(Course).to receive(:create!).with(@course1).and_return(@course1)
 
- describe "#create" do
+  describe "#create" do
     before :each do
       @id1 = "1"
       @course1 = "545"
@@ -116,43 +116,54 @@ describe CoursesController, type: :controller do
   
   
   
-    describe "updates a course" do
+  # describe "updates a course" do
+  #   before :each do
+  #     @err = ""
+  #     @id1 = "1"
+  #     @course1 = "545"
+  #     @course2 = "575"
+  #     @results = [@course1,@course2]
+  #   end
+  #   let(:id) {'1'}
+  #   let (:params) {{:abbrev => "CS545"}}
+  #   let (:course) {double('course',params)}
+     
+  #   it "calls the find method to retrieve a course" do
+  #     expect(Course).to receive(:find).with(id).and_return(course)
+  #     allow(course).to receive(:update_attributes).with(params)
+
+  #     allow(course).to receive(:errors).and_return(@err)
+  #     #allow(@err).to be_empty
+  #     patch :update, id: id, course: params
+
+  #   end
+  # end
+  
+    
+   describe 'destroys a course' do
       let(:id) {'1'}
-      let (:params) {{:abbrev => "CS545"}}
-      let (:course) {double('Software Engineering',params)}
-       
-      it "calls the find method to retrieve a course" do
-        expect(Course).to receive(:find).with(id).and_return(course)
-        allow(course).to receive(:update_attributes!).with(params)
-        get :update, id: id, course: params
+      let(:course) {double('Software Engineering', :abbrev => 'CS545')}
+      
+      it 'calls the find method to retreive the course' do
+          expect(Course).to receive(:find).with(id).and_return(course)
+          allow(course).to receive(:destroy)
+          get :destroy, id: id
       end
-    end
-    
-    
-     describe 'destroys a course' do
-        let(:id) {'1'}
-        let(:course) {double('Software Engineering', :abbrev => 'CS545')}
-        
-        it 'calls the find method to retreive the course' do
-            expect(Course).to receive(:find).with(id).and_return(course)
-            allow(course).to receive(:destroy)
-            get :destroy, id: id
-        end
-        
-        it 'sets a flash message' do
-           allow(Course).to receive(:find).with(id).and_return(course)
-           allow(course).to receive(:destroy)
-           get :destroy,  id: id
-           expect(flash[:notice]).to eq("Course '#{course.abbrev}' deleted.")
-        end
-        
-        it 'redirects to the courses page' do
-           allow(Course).to receive(:find).with(id).and_return(course)
-           allow(course).to receive(:destroy)
-           get :destroy,  id: id
-           expect(response).to redirect_to(courses_path)
-       end
-    end
+      
+      it 'sets a flash message' do
+         allow(Course).to receive(:find).with(id).and_return(course)
+         allow(course).to receive(:destroy)
+         get :destroy,  id: id
+         expect(flash[:notice]).to eq("Course '#{course.abbrev}' deleted.")
+      end
+      
+      it 'redirects to the courses page' do
+         allow(Course).to receive(:find).with(id).and_return(course)
+         allow(course).to receive(:destroy)
+         get :destroy,  id: id
+         expect(response).to redirect_to(courses_path)
+     end
+   end
   # describe "#update" do
   #   before :each do
   #     @id1 = "1"

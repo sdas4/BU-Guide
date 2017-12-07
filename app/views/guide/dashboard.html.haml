@@ -29,14 +29,16 @@
       / Page Content
       #page-content-wrapper
         .container-fluid
-          %h1 Binghamton University Guide Dashboard help
+          %h1 Binghamton University Guide Dashboard Help
           %p Click on toggle menu to explore features
           %p On left side you can see all features and on click of any particular feature respective page will open here.
           
           
           %button#menu-toggle.btn.btn-secondary{:formaction => "#menu-toggle", :type => "submit"} Toggle Menu
-        = link_to '<button type="button"><- Back</button>'.html_safe, guide_index_path
-        
+          %br
+        = link_to '<button type="button" class="btn">Back to Homepage</button>'.html_safe, guide_index_path
+        %br
+        = link_to '<button type="button" class="btn">List of Users</button>'.html_safe, users_path
       / /#page-content-wrapper
     / /#wrapper
     / Bootstrap core JavaScript

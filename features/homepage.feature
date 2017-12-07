@@ -13,5 +13,5 @@ Then I should see "Dashboard"
 Scenario: User registeration
 Given I am on the homepage
 When I press "Sign Up"
-When I go to the registeration
+When I go to the registration
 Then I should see "User Registration"
