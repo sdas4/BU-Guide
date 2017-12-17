@@ -14,17 +14,28 @@ Versions
   source 'https://rubygems.org'
 
   ruby '2.3.4'
+  
   'rails', '4.2.5'
-  'sass-rails', '~> 5.0'
-  'uglifier', '>= 1.3.0'
-  'coffee-rails', '~> 4.1.0'
+  
+  'sass-rails', '5.0'
+  
+  'uglifier', '1.3.0'
+  
+  'coffee-rails', '4.1.0'
+  
   'cucumber', '2.0.0'
+  
   'capybara', '2.4.4'
-  'jbuilder', '~> 2.0'
-  'sdoc', '~> 0.4.0'
+  
+  'jbuilder', '2.0'
+  
+  'sdoc', '0.4.0'
+  
   'rspec-rails', '3.7.2'
+  
   'capybara', '2.4.4'
-  'web-console', '~> 2.0'
+  
+  'web-console', '2.0'
 
 All other gems (without specific versions) are found in the gemfile
 
