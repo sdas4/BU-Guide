@@ -1,6 +1,8 @@
+# **BU GUIDE**
+
 The Binghamton Student Guide acts as a simple yet very informative and useful medium for users trying to know more about the university. Our primary users would be the staff members and the current as well as prospective students.
 
-# **Initial Contributors**
+## **Initial Contributors**
 
   Sujoy Das
   
@@ -16,7 +18,7 @@ Precisely, the project would be a static as well as a dynamic website, currently
 Depending on the type of user and what privileges they have. Segregation of information for organized and quick access to relevant data is our aim. 
 An interactive website thus helps in retrieving the perfect information the user needs without wasting much time in searching the entire website and going through the information which they don't need at that point of time.
 
-# **Versions**
+## **Versions**
 
   source 'https://rubygems.org'
 
@@ -46,7 +48,7 @@ An interactive website thus helps in retrieving the perfect information the user
 
 All other gems (without specific versions) are found in the gemfile
 
-# **Instructions For Continuation**
+## **Instructions For Continuation**
   1. Get the database setup with "rake db:migrate"
   2. Seed the database with some initial data using "rake db:seed" (this step is not required)
   3. Run the server via the command "rails -server -p $PORT -b $IP"
