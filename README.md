@@ -1,6 +1,6 @@
 The Binghamton Student Guide acts as a simple yet very informative and useful medium for users trying to know more about the university. Our primary users would be the staff members and the current as well as prospective students.
 
-**##Initial Contributors**
+#Initial Contributors
 
   Sujoy Das
   
