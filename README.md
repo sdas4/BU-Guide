@@ -1,16 +1,23 @@
 The Binghamton Student Guide acts as a simple yet very informative and useful medium for users trying to know more about the university. Our primary users would be the staff members and the current as well as prospective students.
 
-Initial Contributors: Sujoy Das
-                      Stephen Molaro
-                      Nirmal Kumar
-                      Jarrod Stone
-                      Kshitija Patil    
+##**Initial Contributors**
+
+  Sujoy Das
+  
+  Stephen Molaro
+  
+  Nirmal Kumar
+  
+  Jarrod Stone
+  
+  Kshitija Patil    
 
 Precisely, the project would be a static as well as a dynamic website, currently limited to the graduate student Computer Science department.
 Depending on the type of user and what privileges they have. Segregation of information for organized and quick access to relevant data is our aim. 
 An interactive website thus helps in retrieving the perfect information the user needs without wasting much time in searching the entire website and going through the information which they don't need at that point of time.
 
-Versions
+##**Versions**
+
   source 'https://rubygems.org'
 
   ruby '2.3.4'
@@ -39,20 +46,29 @@ Versions
 
 All other gems (without specific versions) are found in the gemfile
 
-Instructions For Continuation
+##**Instructions For Continuation**
   1. Get the database setup with "rake db:migrate"
   2. Seed the database with some initial data using "rake db:seed" (this step is not required)
   3. Run the server via the command "rails -server -p $PORT -b $IP"
 
-Implemented Work
+##**Implemented Work**
+
   -Dashboard
+  
   -Course Details(Add/edit/delete)
+  
   -Professor Details(Add/edit/delete)
+  
   -Omniauth Facebook login
+  
   -Sign Up
+  
   -Display list of USers
 
-Future Work
+##**Future Work**
+
   -Semester-Wise calculation
+  
   -Frequently Asked Question
+  
   -Contact Us
